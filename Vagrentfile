@@ -7,11 +7,11 @@ Vagrant.configure("2") do |config|
     vb.cpus = "2" 
   end
 
-  config.vm.hostname = "dockerhost"
+    config.vm.hostname = "dockerhost"
     
     config.vm.network "public_network", bridge: "Intel(R) Ethernet Controller (3) I225-V"
 
-    config.vm.synced_folder ".", "/vagrant", disabled: true
+    config.vm.synced_folder ".", "/vagrant"
 
     config.vm.provision "shell", path: "install_docker_latest.sh"
 end
